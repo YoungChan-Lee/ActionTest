@@ -30,7 +30,7 @@ jobs:
         git config --global user.email "yc13033@studymax.kr"
         
         # 현재 브랜치의 dist 폴더를 gh-pages 브랜치에 force push
-        git add dist
+        git add -f dist
         git commit -m "Deploy to gh-pages"
         
         # gh-pages 브랜치 체크아웃 및 dist 폴더 강제 푸시
