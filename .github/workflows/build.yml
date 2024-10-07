@@ -29,6 +29,8 @@ jobs:
         # GitHub 계정 정보 설정
         git config --global user.name "yc13033"
         git config --global user.email "yc13033@studymax.kr"
+
+        git pull origin gh-pages
         
         # 현재 브랜치의 dist 폴더를 gh-pages 브랜치에 force push
         git add -f dist
