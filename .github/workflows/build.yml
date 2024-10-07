@@ -35,6 +35,6 @@ jobs:
         git commit -m "Deploy to gh-pages"
         
         # gh-pages 브랜치 체크아웃 및 dist 폴더 강제 푸시
-        git subtree push -f --prefix dist origin gh-pages
+        git subtree push --prefix dist origin gh-pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub Actions의 자동 인증을 위한 토큰
