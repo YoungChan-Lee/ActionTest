@@ -30,6 +30,10 @@ jobs:
         git config --global user.name "yc13033"
         git config --global user.email "yc13033@studymax.kr"
 
+        # 병합 방식을 명시적으로 설정 (merge 방식 사용)
+        git config pull.rebase false
+        
+        # 원격의 gh-pages 브랜치 가져오기
         git pull origin gh-pages
         
         # 현재 브랜치의 dist 폴더를 gh-pages 브랜치에 force push
