@@ -32,15 +32,15 @@ jobs:
 
         # 병합 방식을 명시적으로 설정 (merge 방식 사용)
         git config pull.rebase false
-        
-        # 원격의 gh-pages 브랜치 가져오기
-        git pull origin gh-pages --allow-unrelated-histories
+
+        # 서로 다른 히스토리 병합을 허용
+        git pull origin gh-pages --allow-unrelated-histories || true
         
         # 현재 브랜치의 dist 폴더를 gh-pages 브랜치에 force push
         git add -f dist
         git commit -m "Deploy to gh-pages"
         
-        # gh-pages 브랜치 체크아웃 및 dist 폴더 강제 푸시
-        git subtree push --prefix dist origin gh-pages
+        # gh-pages 브랜치로 강제 푸시
+        git push origin `git subtree split --prefix dist main`:gh-pages --force
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub Actions의 자동 인증을 위한 토큰
