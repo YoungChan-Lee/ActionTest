@@ -34,7 +34,7 @@ jobs:
         git config pull.rebase false
         
         # 원격의 gh-pages 브랜치 가져오기
-        git pull origin gh-pages
+        git pull origin gh-pages --allow-unrelated-histories
         
         # 현재 브랜치의 dist 폴더를 gh-pages 브랜치에 force push
         git add -f dist
